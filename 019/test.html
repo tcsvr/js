@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Demo</title>
+</head>
+<body>
+    <p><input type="text" id="username"></p>
+    <p><button id="btnSubmit">提交</button></p>
+</body>
+</html>
+<script>
+    var btnSubmit = document.getElementById("btnSubmit");
+    var username = document.getElementById("username");
+    btnSubmit.onclick = function(){
+        //console.log(username.value);
+        
+        if(username.value.length < 6 || username.value.length > 10){
+            alert("用户度长度不对，用户名长度6-10字符");
+        }
+    }
+
+
+</script>

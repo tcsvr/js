@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <table border="1" id="table" width="100%">
+
+    </table>
+    <h1 id="result"></h1>
+    <button id="btn">Button</button>
+</body>
+</html>
+<script>
+    /*
+    // 定义变量
+    var num = 100;
+    var num2 = "100";
+
+    console.log(num===num2);
+
+
+    var a = true;
+
+    var num3 = num++;
+    console.log(num3);
+
+    // let name = "zeng";
+    // const PI = 1234;
+
+    // 数据类型
+    // Number
+    // String
+    // Bool
+
+    
+    console.log(num + num2);
+
+    if(num>101){
+        console.log("num大于1");
+    }
+
+    var i = 1;
+    while(i<=3){
+        console.log("第"+i+"次");
+        i = i + 1;
+    }
+
+    //console.log(num);
+    */
+
+    // 逻辑运算情况
+    /*
+        true && true   true
+        true && false   false
+        false && true   false
+        false && false  false
+
+        true || true    true
+        true || false   true
+        false || true   true
+        false || false  false
+    
+
+    // if 判断
+    var len = 7;
+    if(len < 6){
+        alert("长度不对");
+    }else {
+        alert("判断通过");
+    }
+    
+
+    var len = 7;
+    len < 6 ? alert("长度不对") : alert("判断通过");
+
+    var num = 1;
+    var result = num > 10 && num < 100 + 5;
+    */
+
+    //程序执行流程控制
+
+    var num1 = 200;
+    var num2 = 200;
+    var result = num1 + num2;
+
+    //条件判断结构
+    /*
+    if(result==300){
+        alert(result);
+    }else if(result==400){
+        document.write(result);
+    }else {
+        console.log(result); 
+    }
+    
+
+    //分支结构 
+    switch(result){
+        case 300:
+            alert(result);
+            break;
+        case 400:
+            document.write(result);
+            break;
+        default:
+            console.log(result);
+            break;
+    }
+    */
+
+    //获得系统时间，星期几数字
+    var today = new Date(); // Date Object
+    var week = today.getDay();
+
+    var result = "";
+    /*
+    if(week==1){
+        result = "一";
+    }else if(week==2){
+        result = "二";
+    }else if(week==3){
+        result = "三";
+    }else if(week==4){
+        result = "四";
+    }else {
+        result = "天";
+    }
+    
+
+    switch(week){
+        case 1: 
+            result = "一";
+            break;
+        case 2:
+            result = "二";    
+            break;
+        case 3:
+            result = "三";   
+            break; 
+        case 4:
+            result = "四";   
+            break; 
+        case 5:
+            result = "五";   
+            break; 
+        case 6:
+            result = "六"; 
+            break; 
+        default:
+            result = "天";      
+    }
+
+    console.log(result);
+
+
+
+
+    // ?
+
+
+
+    //输出结果
+    var h1 = document.getElementById("result");
+    h1.innerHTML = "今天：2019-02-27 17:39:10 星期" + result;
+    */
+
+    //循环结构
+
+    /*
+    var table = document.getElementById("table");
+
+    // while
+    var html = "";
+    var i = 1;
+    while(i<=10){
+        console.log(i);
+        html = html+"<tr><td>1-1</td></tr>"
+        i++;
+    }
+
+    table.innerHTML = html;
+    
+
+    // do....while...
+    
+    var i = 1;
+    do {
+        console.log("i="+i);
+        i++;
+    }while(i<=10);
+    
+
+
+    // 1*2*3*4..10 = ?
+
+    var i = 1;
+    var sum = 1;
+    do {
+        sum = sum * i;
+        i = i + 1;
+    }while(i<=10);
+
+    console.log(sum);
+    
+
+    // for
+    var html = "";
+    for(var i=1; i<=100; i++){
+        html += "<tr>";
+        for(var j=1; j<=100; j++){
+            html += "<td>1</td>";
+        }    
+        html += "</tr>";    
+    }
+
+    document.getElementById("table").innerHTML = html;
+    
+
+
+
+    // break 断开，打断
+    for(var i=1; i<=10; i++){
+        
+        
+        if(i>5){
+            break;
+        }
+
+        console.log(i);
+    }
+    
+
+    var i = 1;
+    while(1){
+        i++;
+
+        if(i>10){
+            break;
+        }
+        console.log(i);
+    }
+    
+
+
+    // continue 继续
+    for(var i=1; i<=10; i++){
+        if(i==3 || i==6 || i==9){
+            continue;
+        }
+
+        console.log(i);
+    }
+    */
+
+
+    
+
+
+   
+
+
+
+
+</script>

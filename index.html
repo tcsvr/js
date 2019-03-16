@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript</title>
+    <!-- <script src="./js/main.js" async></script> -->
+</head>
+<body>
+    <h1 id="wd"> 我的世界</h1>
+    <button id="btn">改变</button>
+</body>
+</html>
+<script>
+    //定义变量，初始化一个值
+    var num1 = 100;
+    var num2 = 300;
+    var uesr_name = "cao";
+    var istrue = true;
+    // alert(num1+num2);
+    var result = num1 + num2;
+    // alert(result)
+    //常量
+    //let num = 100;
+    //const num =100;
+    // console.log(result);
+    // document.write(result)
+    var wd = document.getElementById("wd")
+    var btn = document.getElementById("btn")
+    btn.onclick = function(){
+        wd.innerHTML = "我的js";
+        wd.style.fontSize ="100px";
+        wd.style.color = "red";
+        btn.style.color = "red";
+        btn.style.padding ="10px";
+        btn.style.backGroundColor ="green";
+        btn.style.border="2px solid black";
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Òþ²ØÍ¼Æ¬</title>
+</head>
+<style>
+	img{
+		opacity: 1;
+	}
+</style>
+<body>
+	<div id="con">
+		<img src="images/tab3.jpg" alt=""><br>
+		<input type="button" value="Ö±½ÓÒþ²Ø" id="down">
+		<input type="button" value="½¥½¥Òþ²Ø" id="man">
+<!-- 		<input type="button" value="ÏÔÊ¾" id="look">
+ -->	</div>
+</body>
+<ml>
+<script>
+	var con = document.getElementById('con');
+	var down = document.getElementById('down');
+	var man = document.getElementById('man');
+	// var look = document.getElementById('look');
+	var img = con.getElementsByTagName('img')[0];
+	var set = setInterval(lost,200);
+	clearInterval(set);
+	var a = 0;
+	// alert(img);
+	down.onclick=function(){
+		img.style.opacity=0;
+	}
+
+	man.onclick=function(){
+		set = setInterval(lost,200);
+	}
+	// look.onclick=function(){
+	// 	img.style.opacity=1;
+	// }
+	function lost(){
+		a+=0.1;
+		if(a>1){
+			clearInterval(set);
+		}
+		img.style.opacity=a;
+	}
+
+</script>

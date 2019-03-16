@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .con{
+            margin: auto ;
+            padding: auto;
+        }
+        .grid{
+            display: grid;
+            grid-gap: .5em;
+            margin: 0 auto;
+            width: 640px;
+        }
+        .gr1{
+            grid-column: 1/2;
+            grid-row: 1;
+        }
+        .gr2{
+            grid-column: 1/2;
+            grid-row: 2;
+        }
+        .gr3{
+            grid-column: 2/3;
+            grid-row: 2;
+        }
+        .gr4{
+            grid-column: 3/4;
+            grid-row: 2;
+        }
+        .gr5{
+            grid-column: 4/5;
+            grid-row: 2;
+        }
+        .gr6{
+            grid-column: 5/6;
+            grid-row: 2;
+        }
+        .gr5 img,.gr2 img,.gr3 img,.gr4 img,.gr6 img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid con">
+        <div class="gr1">
+            <img id="img" src="images/tab1.jpg" alt="">
+        </div>
+        <div class="grid">
+            <div  class="gr2">
+                <img id="img2" src="images/tab1.jpg" alt="">
+            </div>
+            <div  class="gr3">
+                <img id="img3" src="images/tab2.jpg" alt="">
+            </div>
+            <div  class="gr4">
+                <img id="img4" src="images/tab3.jpg" alt="">
+            </div>
+            <div  class="gr5">
+                <img id="img5" src="images/tab4.jpg" alt="">
+            </div>
+            <div  class="gr6">
+                <img id="img6" src="images/tab5.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>    
+    // var img=document.getElementById("img");
+    // var img2=document.getElementById("img2");
+    // var img3=document.getElementById("img3");
+    // var img4=document.getElementById("img4");
+    // var img5=document.getElementById("img5");
+    // var img6=document.getElementById("img6");
+
+// img2.onclick= function(){
+//     img.src="images/tab1.jpg"
+// }
+// img3.onclick= function(){
+//     img.src="images/tab2.jpg"
+// }
+// img4.onclick= function(){
+//     img.src="images/tab3.jpg"
+// }
+// img5.onclick= function(){
+//     img.src="images/tab4.jpg"
+// }
+// img6.onclick= function(){
+//     img.src="images/tab5.jpg"
+// }
+var img =document.getElementById("img");
+for(var i=2;i<7;i++){
+    var img2 =document.getElementById("img"+i);
+    console.log(i)
+    img2.onclick = function (){
+        img.src = this.src
+    }
+}
+console.log(window.screen.width)
+</script>

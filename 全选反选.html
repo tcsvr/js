@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全选反选</title>
+</head>
+<body>
+	<input type="button" value="全选" id="but1">
+	<input type="button" value="反选" id="but2">
+	<input type="button" value="全不选" id="but3">
+	<br>
+	<input type="checkbox" name="love" id="">
+	<input type="checkbox" name="love" id="">
+	<input type="checkbox" name="love" id="">
+	<input type="checkbox" name="love" id="">
+	<input type="checkbox" name="love" id="">
+	<input type="checkbox" name="love" id="">
+	<input type="checkbox" name="love" id="">
+	<input type="checkbox" name="love" id="">
+	<input type="checkbox" name="love" id="">
+	<input type="checkbox" name="love" id="">
+
+</body>
+</html>
+<script>
+	var but1 = document.getElementById('but1');
+	var but2 = document.getElementById('but2');
+	var but3 = document.getElementById('but3');
+	var check = document.getElementsByName('love');
+
+	// alert(check[0].checked);
+
+	// checked="checked"
+	// 全选
+	but1.onclick = function(){
+		for(var i=0; i<check.length; i++){
+			check[i].checked = true;
+		}
+	}
+	// 全不选
+	but3.onclick = function(){
+		for(var i=0; i<check.length; i++){
+			check[i].checked = false;
+		}
+	}
+
+	// 反选
+	but2.onclick = function(){
+		for(var i=0; i<check.length; i++){
+
+			if(check[i].checked){
+				check[i].checked = false;
+			}else{
+				check[i].checked = true;
+			}
+			
+		}
+	}
+</script>

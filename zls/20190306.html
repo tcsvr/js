@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+    <style>
+        #title {
+           
+        }
+
+        .blue {
+            color: blue;
+            font-size: 62px;
+        }
+
+        .red {
+            color: red;
+            font-size: 162px;
+        }
+    </style>
+</head>
+<body>
+    <button>Btn</button>
+    <div>
+        <img src="images/01.png" alt="">
+        <img src="images/02.png" alt="">
+        <img src="images/03.png" alt="">
+        <img src="images/04.png" alt="">
+        <img src="images/05.png" alt="">
+        <img src="images/06.png" alt="">
+        <img src="images/07.png" alt="">
+        <img src="images/08.png" alt="">
+    </div>
+    
+    <h1 id="title" class="blue">Hello</h1>
+    <img class="img1" src="images/product_04.jpg" alt="">
+    <ul id="list">
+        <li>1111</li>
+        <li>2222</li>
+        <li>33333</li>
+    </ul>
+    <ol id="list2">
+        <li>1111</li>
+        <li>2222</li>
+    </ol>
+</body>
+</html>
+<script>
+
+//JS操作html页面，文档
+
+// 文档树
+
+// document - HTML  - HEAD - TITLE
+//                  - BODY - UL - LI
+
+// DOM  Node 节点
+
+// JS   Object
+
+// 找元素
+
+// var title = document.getElementById("title2");
+// var list = document.getElementById("list");
+// var ul_li = list.getElementsByTagName("li");
+
+//console.log(li2);
+
+var h1 = document.querySelector("h1");
+var img = document.querySelector("img");
+var li = document.querySelectorAll("ul li");
+
+
+// 操作  
+// 内容
+h1.innerHTML = "<span>Javascript</span>";
+
+// 样式
+//h1.style.color = "#999";
+//h1.style.fontSize = "42px";
+
+
+// 属性
+/*
+var btn = document.querySelector("button");
+btn.onclick = function(){
+    //h1.className = "red";
+    //img.src = "images/product_11.jpg";
+    //img.setAttribute("src", "images/product_a.jpg");
+
+    var allimg = document.querySelectorAll("div img");
+    
+    for(var i=0; i<allimg.length; i++){
+        allimg[i].style.border = "5px solid red";
+    }
+    
+    
+}
+*/
+
+
+var allimg = document.querySelectorAll("div img");
+    
+for(var i=0; i<allimg.length; i++){
+
+    allimg[i].onmouseover = function(){
+        this.style.border = "5px solid red";
+    }
+
+    allimg[i].onmouseout = function(){
+        this.style.border = "0px solid red";
+    }
+
+
+    
+}
+
+
+
+// 绑定事件
+
+
+
+
+</script>

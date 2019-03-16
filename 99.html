@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>九九乘法表金字塔</title>
+    <script src="frameworks/jquery-2.1.4/jquery.js"></script>
+    <script>
+    /*
+//1.正三角  原生追加
+    window.onload = function(){
+        var box = document.getElementById("one");
+        for(i = 1;i<=9;i++){
+            for (j=1;j<=i;j++){
+                var result = j+"*"+i+"="+(j*i);
+                var newspan = document.createElement("span");
+                newspan.innerHTML = result;
+                box.appendChild(newspan);
+
+            }
+            var newbr = document.createElement("br");
+            box.appendChild(newbr);
+        }
+    };
+    */
+
+//2.倒三角 原生追加
+   /*
+   window.onload = function(){
+    var box = document.getElementById("one");
+         for(var i=9;i>0;i--){
+            for(var j=1;j<=i;j++){
+                var result = i+"*"+j+"="+(i*j);
+                var newspan = document.createElement("span");
+                newspan.innerHTML = result;
+                box.appendChild(newspan);  
+             }
+             var end = document.createElement("br");
+             box.appendChild(end);     
+        }
+   };
+   */
+
+//3.正三角使用jQuery记得导入jQuery框架
+    /* 
+    $(function () {        
+         var $box = $(".box");
+         for(var i = 1;i<=9;i++){
+             for(var j = 1;j<=i;j++){
+             var result = j+"*"+i+"="+(j*i);
+             console.log(result);
+             var newSpan = $("<span>"+result+"</span>");
+             $box.append(newSpan);
+             }
+         var $end = $("<br />");
+         $box.append($end);
+         }
+     });
+     */
+
+//4.用jQuery写倒三角(记得导库) 并追加
+   $(function(){
+    var $box = $(".box");
+    for(var i=9;i>=1;i--){
+        for(var j=1;j<=i;j++){
+            var result = j+"*"+i+"="+(j*i);
+            var newspan = $("<span>"+result+"</span>");
+            $box.append(newspan);
+        }
+        var $end = $("<br />");
+        $box.append($end);
+    }
+   });
+
+    </script>
+
+    <style>
+        .box{text-align: center;}
+        span{border: 1px solid #dddddd;}
+    </style>
+
+</head>
+<body>
+    <div id = "one" class="box"></div>
+</body>
+</html>

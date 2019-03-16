@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象</title>
+    <style>
+    #img img{
+        width: 150px
+    }
+    </style>
+</head>
+<body>
+    <div id="img">
+        <img src="images/tab1.jpg" alt="">
+    </div>
+    <table id="tab" border="1">
+        <tr>
+            <td>
+                1-1
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+//获得35天之后是星期几
+// var today= new Date();
+// var time=today.getTime()+(60*60*24*35*1000);
+// var last35 = new Date(time);
+// console.log(last35.getDate()+":"+last35.getDay())
+
+//Math 数学
+// var num =Math.random();
+// console.log(Math.floor(num*100))
+
+//字符处理
+// var user ="user1" 
+// console.log(user.length)
+
+// var str="Hello world! qwertyuiopasdfghjklzxcvbnm"
+// var tt=str.charAt(Math.floor(num*10))
+// var ti=str.charAt(Math.floor(num*11))
+// document.write(tt+ti)
+
+//字符串查找
+// var email ="asd@asfasafsggfdgad";
+// console.log(email.indexOf("@"))
+
+// if(email.indexOf("@") ===-1){
+//     alert("不存在")
+// }else{
+//     alert("存在")
+// }
+
+// var str="Visit Microsoft!"
+// document.write(str.replace(/[A-Z]/g, "ko"))
+// for(i=0;i<str.length;i++){
+//     console.log(str[i]);
+// }
+
+//正则表达式（高级字符处理）
+
+
+// 数组
+//var student = "CSW";
+// var student =new Array("CSW","WSC","SCW")
+// console.log(student)
+//一维数组
+// var arr = ["A","B","C"]
+
+//二维数组
+// var arr2 = [["A","B"],["C","D"]]
+// var arr3 = [[["csw","ss"],28,1], ["C","30",0]];
+// console.log(arr3)
+// document.write(arr3)
+
+//如何得到数组的长度
+// console.log(arr.length)
+
+//获取一维数组元素值
+// console.log(student[1])
+//获取三维数组元素值
+// console.log(arr3[0][0][1])
+
+//遍历 ,循环 ，迭代数组
+var imgs = ["tab1.jpg","tab2.jpg","tab3.jpg","tab4.jpg",]
+imgs.push("tab5.jpg");
+var img =document.getElementById("img")
+var html = ""
+for(i=0;i<imgs.length;i++){
+    var src ="images/"+imgs[i];
+    html+='<img src="./'+src+'"/>';
+}
+console.log(html)
+img.innerHTML=html
+
+var phone= [
+    ["名称","价格"],
+    ["ipone7",3000],
+    ["ipone8",4000],
+    ["ipone9",5000],
+    ["ipone10",6000],
+    ["ipone11",7000]
+]
+var tab = document.getElementById("tab");
+var html ="";
+for (i=0;i<phone.length;i++){
+    html+="<tr>"
+    html+="<td>"
+     html+=phone[i][0]
+    html+="</td>"
+    html+="<td>"
+     html+=phone[i][1]
+    html+="</td>"
+    html+="</tr>"
+}
+console.log(html)
+tab.innerHTML=html
+</script>  

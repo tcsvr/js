@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	无缝滚动
+	</title>
+	<style type="text/css">
+	ul,li,a{
+		margin: 0;padding: 0;
+		list-style: none;
+		text-decoration: none;
+	}
+	#con{
+		width:930px;height:188px;
+		background: yellow;
+		margin: 0 auto;
+		position: relative;
+        overflow: hidden;
+
+	}
+	#left,#right{
+		position: absolute;
+		top: 40%;
+		z-index: 999;
+		background: red;
+	}
+	#left{
+		left:10px;
+	}
+	#right{
+		right: 10px;
+	}
+	#con ul{
+		position: absolute;
+		left: 0;top:0;
+	}
+	#con ul li{
+		width: 300px; height: 188px;
+		padding:0 5px;
+		float: left;
+	}
+	</style>
+</head>
+<body>
+     <p>做任何特效时，任何移动的特效都是改变他的定位</p>
+     <div id="con">
+        <a href="javascript:;" id="left">
+     			   <img src="C:\Users\lenovo\Desktop\images\left.png" alt="">
+        </a>
+        <a href="javascript:;" id="right">
+     			   <img src="C:\Users\lenovo\Desktop\images\right.png" alt="">
+        </a>
+     	<ul>
+     		<li>
+     			<a href="">
+     			   <img src="C:\Users\lenovo\Desktop\images\car-1.jpg" alt="">
+     		</li>
+     		<li>
+     			<a href="">
+     			   <img src="C:\Users\lenovo\Desktop\images\car-2.jpg" alt="">
+     		</li>
+     		<li>
+     			<a href="">
+     			   <img src="C:\Users\lenovo\Desktop\images\car-3.jpg" alt="">
+     		</li>
+     	</ul>
+     </div>
+     	
+    
+</body>
+</html>
+<script type="text/javascript">
+	var oCon = document.getElementById('con');
+	var oLeft = document.getElementById('left');
+	var oRight = document.getElementById('right');
+	var oUl = oCon.getElementsByTagName('ul')[0];
+	var oLi = oUl.getElementsByTagName('li');
+	var speed = 2;
+	var set = setInterval(move,30);
+
+	oUl.innerHTML += oUl.innerHTML;
+	var liw=oLi[0].offsetWidth;
+	oUl.style.width = (liw*oLi.length)+'px';
+	oUl.onmouseover=function(){
+		clearInterval(set);
+	}
+	oUl.onmouseout=function(){
+		set=setInterval(move,30);
+	}
+	left.onclick = function(){
+		speed=-2;
+	}
+	right.onclick=function(){
+		speed=2;
+	}
+	function move(){
+		if(oUl.offsetLeft>0){
+			oUl.style.left='-'+(oUl.offsetWidth/2)+'px';
+		}
+		if(oUl.offsetLeft<'-'+(oUl.offsetWidth/2)){
+			oUl.style.left=0;
+		}
+		oUl.style.left=oUl.offsetLeft+speed+'px';
+	}
+</script>

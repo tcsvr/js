@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点增删</title>
+    <style>
+        a:link,a:visited{
+            text-decoration: none;
+           color: #fff;
+        }
+        .grid,.lg1,.lg2,.lg3,.lg4,.lg5,.lg6{
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            align-items: center;
+            margin: auto 0;
+            padding: auto 0;
+        }
+        .lg1,.lg2,.lg3,.lg4,.lg5,.lg6{
+            position: relative;
+        }
+        button{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 40%;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns:2fr 3fr 1fr;
+            grid-auto-rows: 50px 100px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+            /* align-items: center; */
+            /* justify-content: center; */
+        }
+
+        .lg1 {
+            grid-column: 1/2;
+            grid-row: 1;
+            height: 100%;
+        }
+
+        .lg2 {
+            grid-column: 2/3;
+            grid-row: 1;
+            height: 100%;
+        }
+        .lg2 p{
+            text-align: right;
+           padding-right: 1em;
+        }
+        .lg3 {
+            grid-column: 1/2;
+            grid-row: 2;
+            height: 100%;
+        }
+        .lg4 {
+            grid-column: 2/3;
+            grid-row: 2;
+            height: 100%;
+        }
+        .lg5 {
+            grid-column: 3/4;
+            grid-row: 2;
+            height: 100%;
+        }
+        .lg6 {
+            grid-column: 3/4;
+            grid-row: 3;
+            height: 100%;
+        }
+        img {
+            height: 100px;
+        }
+
+        button {
+            height: 1.3em;
+            width: 1.5em;
+            font-size: 1.3em;
+        }
+        #btn1{
+            background: #ff0000;
+            border: 0px
+        }
+        #btn2{
+            background: #0000ff;
+            border: 0px
+        }
+        .auto{
+            margin: auto 0;
+            padding: auto 0;
+        }
+         input{
+            width: 97%;
+            margin: 35px 1%;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid" id="dv">
+        <div class="lg1">
+           <p>Additional Images</p> 
+        </div>
+        <div class="lg2">
+            <p>Sort Order</p>
+        </div>
+        <div class="lg3" id="con">
+            <img src="../images/tab1.jpg" alt="">
+        </div>
+        <div class="lg4" id="con1">
+            <input type="text" placeholder="Sort Order">
+        </div>
+        <div class="lg5" id="con2">
+            <button id="btn1"><a href="">-</a></button>
+        </div>
+        <div class="lg6">
+            <button id="btn2" class="auto"><a href="">+</a></button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var btn2 =document.getElementById("btn2")
+    var btn1 =document.getElementById("btn1")
+    var con = document.getElementById("con")
+    var con1 =document.getElementById("con1")
+    var con2 =document.getElementById("con2")
+    var dv =document.getElementById("dv")
+    var co = con +con1 + con2
+   console.log(co)
+   btn2.onclick =function(){
+       var objco = document.createElement("div")
+        objco.innerHTML=co
+        var dv=document.getElementById("dv")
+        var div=document.querySelectorAll("div")
+        dv.appendChild(objco)
+   }
+   
+
+
+
+</script>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tab</title>
+    <style>
+        body,table{
+            margin: 0 auto;
+        }
+        img{
+            height: 100px;
+            padding: 15px 150px 10px 10px;
+        }
+        button{
+           margin: 20px 50px;
+        }
+        input{
+            width: 400px;
+            margin: auto 10px;
+            height: 24px;
+        }
+        .p{
+            text-align: right;
+            margin-right: 12px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" id="tab">
+        <tr>
+            <td>
+                <p>Additional Images</p>    
+            </td>
+            <td>
+                <p class="p">Sort Order</p>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr class="tr">
+            <td>
+                <img src="../images/tab1.jpg" alt="">
+            </td>
+            <td>
+                <input type="text" placeholder="Sort Order">
+            </td>
+            <td>
+                <button btn="btn1">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td>
+                <button>+</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+
+const tab = document.querySelector("#tab>tbody");
+        const add = document.querySelector(".tr");
+        const btn1 = document.querySelectorAll("td[colspan='2']+td button")
+
+        let tr = document.querySelectorAll("tr");
+        let btn0 = document.querySelectorAll("td+td+td button")
+        clear();
+        btn1[0].onclick = function () {
+            var oLi = document.createElement("tr");/* 创建节点 */
+            tr = document.querySelectorAll("tr");/* 刷新节点列表 */
+            oLi.innerHTML = add.innerHTML;/* 节点内容 */
+            tab.insertBefore(oLi, tr[1]);/* 追加节点 */
+            clear();/* 刷新绑定清除函数 */
+        }
+
+        function clear() {
+            // 刷新节点列表 
+            tr = document.querySelectorAll("tr");
+            btn0 = document.querySelectorAll("td+td+td button")
+            // 遍历绑定清除函数
+            for(i=0; i<btn0.length; i++){
+                btn0[i].index = i+1;/* 定位表头以外列表 */
+                btn0[i].onclick = function () {
+                    tr[this.index].remove();/* 定位清除自身 */
+                }
+            }
+        }
+    // var btn2=document.getElementById("btn2")
+    // var btn1=document.getElementById("btn1")
+    // var tab=document.getElementById("tab")
+    // var con=document.getElementById("con")
+
+    // var arrtr = document.querySelectorAll("tr");
+    // btn2.onclick= function (){
+    //     var adtr =document.createComment("tr")
+    //     arrtr=document.querySelectorAll("tr")
+    //     adtr.innerHTML=con.innerHTML
+    //     tab.insertBefore(adtr,arrtr[1])
+    //     // clear();
+    // }
+    // console.log(arrtr)
+</script>

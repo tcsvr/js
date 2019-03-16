@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+    <style>
+    .blue{
+        color: blue;
+        font-size: 12px
+    }
+    .red{
+        color: red;
+        font-size: 90px
+    }
+    img{
+        width: 200px;
+        border: 0px solid red;
+    }
+    </style>
+</head>
+<body>
+    <button>btn</button>
+    <h1 id="h1" class="blue">Hello</h1>
+    <img id="imgs" src="images/tab1.jpg" alt="">
+    <img id="imgs" src="images/tab2.jpg" alt="">
+    <img id="imgs" src="images/tab3.jpg" alt="">
+    <img id="imgs" src="images/tab4.jpg" alt="">
+    <ul id="list">
+        <li>111</li>
+        <li id="l2">222</li>
+        <li>333</li>
+    </ul>
+</body>
+</html>
+<script>
+    // JS操作HTML页面，文档
+
+    // 文档树
+    // document —— HTML —— HEAD —— TITLE
+    //                 —— BODY —— UL ——LI 
+
+    // DOM   Node (节点)
+    // JS     Object
+    // 找元素
+
+    // 操作
+   var h1= document.getElementById("h1")
+   var list= document.getElementById("list")
+    var li2= list.getElementsByTagName("li")
+//    console.log(h1)
+
+   var hg = document.querySelector("h1")
+   var hh = document.querySelectorAll("ul li")
+//    console.log(hg)
+    // 内容      
+    h1.innerHTML="<span>   my world </span>"
+    // 样式
+// h1.style.color= "red"
+// h1.style.fontSize="50px";
+    // 属性
+    var btn = document.querySelector("button")
+    var imgs = document.querySelectorAll("img")
+    var img = document.querySelector("img")
+    // var imgs = document.getElementById("imgs")
+    // console.log(imgs)
+    // btn.onclick=function(){
+    //     if( h1.className=="bule"){
+    //         h1.className="red"
+    //     }else{
+    //         h1.className="bule"
+    //     }
+    //     // img.setAttribute("src","images/tab2.jpg")
+    //     // for(i=0;i<imgs.length;i++){
+    //     //     imgs[i].style.border="2px solid red"
+    //     // }
+    //     if( img.style.border==="0px solid red"){
+    //         for(i=0;i<imgs.length;i++){
+    //         imgs[i].style.border="2px solid red"
+    //         }
+    //     }else{ 
+    //         for(i=0;i<imgs.length;i++){
+    //         imgs[i].style.border="0px solid red"
+    //         }
+    //     }
+    // }
+    // 绑定事件
+
+    //动态增加节点
+    //创建节点
+    var objLi=document.createElement("li")
+    console.log(objLi)
+
+    // objLi.innerHTML="444"
+    //追加节点
+    var objUl=document.getElementById("list")
+    var l2=document.querySelectorAll("li")
+    objUl.appendChild(objLi)
+
+    // var objLi2=document.createElement("li")
+    // objLi2.innerHTML="555"
+    // objUl.insertBefore(objLi2,l2[1])
+
+    //删除子节点
+    objUl.removeChild(l2[2])
+
+ </script>

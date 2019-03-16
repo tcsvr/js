@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> ‘ ‘</title>
+</head>
+<style type="text/css">
+	img{
+		opacity:1;
+	}
+</style>
+<body>
+    <div id="con">
+    	<img src="images/tab4.jpg">
+    	<br>
+    	<input type="button"  value="÷±Ω”“˛≤ÿ" id="dos">
+    	<input type="button"  value="Ω•Ω•“˛≤ÿ" id="done">
+    	<input type="button"  value="÷±Ω”œ‘ æ" id="tos">
+    	<input type="button"  value="Ω•Ω•œ‘ æ" id="tone">
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+	var con = document.getElementById('con');
+	var dos = document.getElementById('dos');
+	var done = document.getElementById('done');
+	var tos = document.getElementById('tos');
+	var tone = document.getElementById('tone');
+	var img = con.getElementsByTagName('img')[0];
+	var set = setInterval(lost,200);
+	var set1 =setInterval(lost1,200);
+	clearInterval(set);
+	clearInterval(set1);
+	var a=1;
+	var b=0;
+	dos.onclick=function  () {
+		img.style.opacity=0;
+		// body...
+	}
+	done.onclick=function(){
+		set=setInterval(lost,200);
+	}
+	function lost(){
+		a-=0.1;
+		if(a<0){
+			clearInterval(set);
+		}
+		img.style.opacity=a;
+	}
+	tos.onclick=function(){
+		img.style.opacity=1;
+	}
+	tone.onclick=function(){
+			setInterval(lost1,200);
+	}
+	function lost1(){
+		b+=0.1;
+		if(b>1){
+			clearInterval(set1);
+		}
+		img.style.opacity=b;
+	}
+</script>

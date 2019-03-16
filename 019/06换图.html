@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #img {
+            /* width: 1000px; */
+            height: 500px;
+        }
+        div img {
+            width: 160px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <img class="" id="img" src="../images/01.jpg" alt="">
+    <div>
+        <img class="btn" onclick="/* button(1) */" src="../images/01.jpg" alt="">
+        <img class="btn" onclick="/* button(2) */" src="../images/02.jpg" alt="">
+        <img class="btn" onclick="/* button(3) */" src="../images/03.jpg" alt="">
+        <img class="btn" onclick="/* button(4) */" src="../images/04.jpg" alt="">
+        <img class="btn" onclick="/* button(5) */" src="../images/05.jpg" alt="">
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="../../JS/jquery.js"></script> -->
+    <script>
+        const img = document.getElementById("img");
+        const btn = document.getElementsByClassName("btn");
+        const $btn = $('.btn');
+        
+        // 方法一 函数
+        // function button(x) {
+        //     img.src = "../images/0" + x + ".jpg";
+        // }
+
+        // 方法二 循环对象
+        // for(var i=0; i<btn.length; i++){
+        //     btn[i].index = i;
+        //     btn[i].onclick=function(){
+        //         img.src = btn[this.index].src;
+        //     };
+        // }
+
+        // 方法三 jq对象
+        $($btn).click(function () {
+            img.src = $(this)[0].src;
+        })
+
+    </script>
+</body>
+</html>
